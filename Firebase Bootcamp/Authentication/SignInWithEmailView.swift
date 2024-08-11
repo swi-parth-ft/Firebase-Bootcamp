@@ -13,32 +13,58 @@ final class SignInEmailViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     
-    func SignIn() {
+    func SignUp() async throws {
         guard !email.isEmpty, !password.isEmpty else {
             print("no email or password found!")
             return
         }
-        Task{
-            do {
-                let returnedUserData = try await AuthenticationManager.shared.createUser(email: email, password: password)
-                print(returnedUserData)
-            } catch {
-                print(error.localizedDescription)
-            }
+  
+        let _ = try await AuthenticationManager.shared.createUser(email: email, password: password)
+    }
+    
+    func SignIn() async throws {
+        guard !email.isEmpty, !password.isEmpty else {
+            print("no email or password found!")
+            return
         }
-        
+        let _ = try await AuthenticationManager.shared.signIn(email: email, password: password)
+          
     }
 }
 
 struct SignInWithEmailView: View {
     
     @StateObject private var viewModel = SignInEmailViewModel()
+    @Binding var showSignInView: Bool
+    
+    var newUser: Bool
+    
     var body: some View {
         VStack {
+            Text(newUser ? "Signing Up" : "Signing In")
             TextField("Email..", text: $viewModel.email)
             TextField("Password..", text: $viewModel.password)
             Button {
-                viewModel.SignIn()
+                if newUser {
+                    Task {
+                        do {
+                            try await viewModel.SignUp()
+                            showSignInView = false
+                        } catch {
+                            print(error.localizedDescription)
+                        }
+                    }
+                    
+                } else {
+                    Task {
+                        do {
+                            try await viewModel.SignIn()
+                            showSignInView = false
+                        } catch {
+                            print(error.localizedDescription)
+                        }
+                    }
+                }
             } label: {
                 Text("Sign in")
             }
@@ -47,5 +73,5 @@ struct SignInWithEmailView: View {
 }
 
 #Preview {
-    SignInWithEmailView()
+    SignInWithEmailView(showSignInView: .constant(false), newUser: true)
 }
