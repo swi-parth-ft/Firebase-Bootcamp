@@ -29,6 +29,10 @@ final class SettingViewModel: ObservableObject {
         let password = "hello12345"
         try await AuthenticationManager.shared.updatePassword(password: password)
     }
+    
+    func deleteAccount() async throws {
+        try await AuthenticationManager.shared.delete()
+    }
 }
 struct SettingsView: View {
     
@@ -82,6 +86,21 @@ struct SettingsView: View {
                     }
                 }
             }
+            
+            Button(role: .destructive) {
+                Task {
+                    do {
+                        try await viewModel.deleteAccount()
+                        showSignInView = true
+                        
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            } label: {
+                Text("Delete account")
+            }
+
         }
         .navigationTitle("Settings")
     }
