@@ -64,5 +64,9 @@ final class AuthenticationManager {
         try await user.updateEmail(to: email)
     }
     
-    
+    func signInWithGoogle(tokens: googleSignInResultModel) async throws -> AuthDataResultModel {
+        let credential = GoogleAuthProvider.credential(withIDToken: tokens.idToken, accessToken: tokens.accessToken)
+        let authDataResult = try await Auth.auth().signIn(with: credential)
+        return AuthDataResultModel(user: authDataResult.user)
+    }
 }
