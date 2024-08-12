@@ -22,6 +22,7 @@
 		0796006A2C6A59A900A51862 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 079600692C6A59A900A51862 /* GoogleSignInSwift */; };
 		0796006C2C6A5AE200A51862 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0796006B2C6A5AE200A51862 /* GoogleService-Info.plist */; };
 		079600702C6A5D8E00A51862 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0796006F2C6A5D8E00A51862 /* Utilities.swift */; };
+		079600722C6A644C00A51862 /* SignInGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079600712C6A644C00A51862 /* SignInGoogleHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		0796006B2C6A5AE200A51862 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0796006D2C6A5B2700A51862 /* Firebase-Bootcamp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Firebase-Bootcamp-Info.plist"; sourceTree = SOURCE_ROOT; };
 		0796006F2C6A5D8E00A51862 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		079600712C6A644C00A51862 /* SignInGoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInGoogleHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				077E05CF2C69746D00B9D2D4 /* AuthenticationView.swift */,
+				079600712C6A644C00A51862 /* SignInGoogleHelper.swift */,
 				077E05D62C69788B00B9D2D4 /* RootView.swift */,
 				077E05D82C697A1100B9D2D4 /* SettingsView.swift */,
 				077E05D02C69746D00B9D2D4 /* AuthenticationManager.swift */,
@@ -199,6 +202,7 @@
 				077E05BD2C69736E00B9D2D4 /* ContentView.swift in Sources */,
 				077E05D32C69746D00B9D2D4 /* AuthenticationManager.swift in Sources */,
 				077E05D72C69788B00B9D2D4 /* RootView.swift in Sources */,
+				079600722C6A644C00A51862 /* SignInGoogleHelper.swift in Sources */,
 				077E05D42C69746D00B9D2D4 /* SignInWithEmailView.swift in Sources */,
 				077E05D52C69746D00B9D2D4 /* AuthenticationView.swift in Sources */,
 				079600702C6A5D8E00A51862 /* Utilities.swift in Sources */,

@@ -8,28 +8,40 @@
 import SwiftUI
 import GoogleSignIn
 import GoogleSignInSwift
-import FirebaseAuth
 
+import AuthenticationServices
 
-struct googleSignInResultModel {
-    let idToken: String
-    let accessToken: String
+struct signInWithAppleButtonViewRepresentable: UIViewRepresentable {
+    let type: ASAuthorizationAppleIDButton.ButtonType
+    let style: ASAuthorizationAppleIDButton.Style
+    
+    func makeUIView(context: Context) -> ASAuthorizationAppleIDButton {
+        return ASAuthorizationAppleIDButton(type: type, style: style)
+    }
+    
+    func updateUIView(_ uiView: ASAuthorizationAppleIDButton, context: Context) {
+        
+    }
+    
+    
 }
+
+
+
+
 @MainActor
 final class AuthenticationViewModel: ObservableObject {
     
     
     func signInGoogle() async throws {
-        guard let topVC = Utilities.shared.topViewController() else { throw URLError(.cannotFindHost) }
-        
-        
-        let gidSignInResults = try await GIDSignIn.sharedInstance.signIn(withPresenting: topVC)
-        guard let idToken = gidSignInResults.user.idToken?.tokenString else { throw URLError(.badURL) }
-        let accessToken = gidSignInResults.user.accessToken.tokenString 
-        
-        let tokens = googleSignInResultModel(idToken: idToken, accessToken: accessToken)
+        let helper = SignInGoogleHelper()
+        let tokens = try await helper.signIn()
         let _ = try await AuthenticationManager.shared.signInWithGoogle(tokens: tokens)
         
+        
+    }
+    
+    func signInApple() async throws {
         
     }
 }
@@ -60,6 +72,20 @@ struct AuthenticationView: View {
                     }
                 }
             }
+            Button {
+                Task {
+                    do {
+                        try await viewModel.signInApple()
+                        showSignInView = false
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
+            } label: {
+                signInWithAppleButtonViewRepresentable(type: .continue, style: .black)
+                    .allowsHitTesting(false)
+            }
+            .frame(height: 55)
             
         }
         .navigationTitle("Sign In")
