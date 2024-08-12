@@ -66,6 +66,15 @@ final class AuthenticationManager {
     
     func signInWithGoogle(tokens: googleSignInResultModel) async throws -> AuthDataResultModel {
         let credential = GoogleAuthProvider.credential(withIDToken: tokens.idToken, accessToken: tokens.accessToken)
+        return try await signIn(credential: credential)
+    }
+    
+    func signInWithApple(tokens: signInWithAppleResult) async throws -> AuthDataResultModel {
+        let credential = OAuthProvider.credential(providerID: AuthProviderID(rawValue: "apple.com")!, idToken: tokens.token, accessToken: tokens.nonce)
+        return try await signIn(credential: credential)
+    }
+    
+    func signIn(credential: AuthCredential) async throws -> AuthDataResultModel {
         let authDataResult = try await Auth.auth().signIn(with: credential)
         return AuthDataResultModel(user: authDataResult.user)
     }

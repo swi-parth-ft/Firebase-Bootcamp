@@ -9,22 +9,7 @@ import SwiftUI
 import GoogleSignIn
 import GoogleSignInSwift
 
-import AuthenticationServices
 
-struct signInWithAppleButtonViewRepresentable: UIViewRepresentable {
-    let type: ASAuthorizationAppleIDButton.ButtonType
-    let style: ASAuthorizationAppleIDButton.Style
-    
-    func makeUIView(context: Context) -> ASAuthorizationAppleIDButton {
-        return ASAuthorizationAppleIDButton(type: type, style: style)
-    }
-    
-    func updateUIView(_ uiView: ASAuthorizationAppleIDButton, context: Context) {
-        
-    }
-    
-    
-}
 
 
 
@@ -32,19 +17,45 @@ struct signInWithAppleButtonViewRepresentable: UIViewRepresentable {
 @MainActor
 final class AuthenticationViewModel: ObservableObject {
     
+    @Published var didSignInWithApple = false
+    let signInAppleHelper = SignInAppleHelper()
     
     func signInGoogle() async throws {
         let helper = SignInGoogleHelper()
         let tokens = try await helper.signIn()
         let _ = try await AuthenticationManager.shared.signInWithGoogle(tokens: tokens)
         
-        
     }
     
+    
     func signInApple() async throws {
-        
+        signInAppleHelper.startSignInWithAppleFlow { result in
+            switch result {
+            case .success(let signInAppleResult):
+                Task {
+                    do {
+                        let _ = try await AuthenticationManager.shared.signInWithApple(tokens: signInAppleResult)
+                        self.didSignInWithApple = true
+                    } catch {
+                        
+                    }
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
+    
+    
+    
+    
 }
+
+
+
+
+
 struct AuthenticationView: View {
     @Binding var showSignInView: Bool
     @StateObject var viewModel = AuthenticationViewModel()
@@ -76,7 +87,6 @@ struct AuthenticationView: View {
                 Task {
                     do {
                         try await viewModel.signInApple()
-                        showSignInView = false
                     } catch {
                         print(error.localizedDescription)
                     }
@@ -86,6 +96,11 @@ struct AuthenticationView: View {
                     .allowsHitTesting(false)
             }
             .frame(height: 55)
+            .onChange(of: viewModel.didSignInWithApple) { oldValue, newValue in
+                if newValue {
+                    showSignInView = false
+                }
+            }
             
         }
         .navigationTitle("Sign In")
