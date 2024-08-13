@@ -30,8 +30,8 @@
             filePath = "Firebase Bootcamp/Core/ProfileView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "Firebase Bootcamp/FireStore/UserManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "createNewUser(user:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "Firebase Bootcamp/FireStore/UserManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "createNewUser(user:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -130,62 +130,98 @@
             endingLineNumber = "26"
             landmarkName = "togglePremiumStatus()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AB663EEA-151B-484E-ADC9-B5E63FD7100D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Firebase Bootcamp/Core/ProfileView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "addUserPreference(text:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E2E50133-DD37-4116-AB98-33899545B37A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Firebase Bootcamp/Core/ProfileView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "47839C87-06A1-4CDF-B0BD-F83AD993F7B2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Firebase Bootcamp/Core/ProfileView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4EC72DA2-7A71-4D65-8014-E6A828D72C6C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Firebase Bootcamp/FireStore/UserManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "addUserPreference(userId:preference:)"
+            landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "CE5CB551-A716-4D10-9703-F43D3F23B032 - df366c85ee7ac1d"
+                  uuid = "4EC72DA2-7A71-4D65-8014-E6A828D72C6C - 878263ec55ab70e5"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 () async throws -&gt; () in Firebase_Bootcamp.ProfileViewModel.togglePremiumStatus() -&gt; ()"
+                  symbolName = "Firebase_Bootcamp.UserManager.addUserPreference(userId: Swift.String, preference: Swift.String) async throws -&gt; ()"
                   moduleName = "Firebase Bootcamp.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pac/Desktop/Swift/Firebase%20Bootcamp/Firebase%20Bootcamp/Core/ProfileView.swift"
+                  urlString = "file:///Users/pac/Desktop/Swift/Firebase%20Bootcamp/Firebase%20Bootcamp/FireStore/UserManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26">
+                  startingLineNumber = "75"
+                  endingLineNumber = "75">
                </Location>
                <Location
-                  uuid = "CE5CB551-A716-4D10-9703-F43D3F23B032 - 2e587488da0b4700"
+                  uuid = "4EC72DA2-7A71-4D65-8014-E6A828D72C6C - 5719225f594e6ac"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for closure #1 () async throws -&gt; () in Firebase_Bootcamp.ProfileViewModel.togglePremiumStatus() -&gt; ()"
+                  symbolName = "(1) suspend resume partial function for Firebase_Bootcamp.UserManager.addUserPreference(userId: Swift.String, preference: Swift.String) async throws -&gt; ()"
                   moduleName = "Firebase Bootcamp.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pac/Desktop/Swift/Firebase%20Bootcamp/Firebase%20Bootcamp/Core/ProfileView.swift"
+                  urlString = "file:///Users/pac/Desktop/Swift/Firebase%20Bootcamp/Firebase%20Bootcamp/FireStore/UserManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26">
-               </Location>
-               <Location
-                  uuid = "CE5CB551-A716-4D10-9703-F43D3F23B032 - d98aed5c45fce01f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 () async throws -&gt; () in Firebase_Bootcamp.ProfileViewModel.togglePremiumStatus() -&gt; ()"
-                  moduleName = "Firebase Bootcamp.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pac/Desktop/Swift/Firebase%20Bootcamp/Firebase%20Bootcamp/Core/ProfileView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26">
-               </Location>
-               <Location
-                  uuid = "CE5CB551-A716-4D10-9703-F43D3F23B032 - cb633eedb21eba18"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(6) suspend resume partial function for closure #1 () async throws -&gt; () in Firebase_Bootcamp.ProfileViewModel.togglePremiumStatus() -&gt; ()"
-                  moduleName = "Firebase Bootcamp.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pac/Desktop/Swift/Firebase%20Bootcamp/Firebase%20Bootcamp/Core/ProfileView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26">
+                  startingLineNumber = "75"
+                  endingLineNumber = "75">
                </Location>
             </Locations>
          </BreakpointContent>
