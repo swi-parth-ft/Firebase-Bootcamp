@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseVertexAI
 
 final class SettingViewModel: ObservableObject {
     func logOut() throws {
@@ -38,6 +39,13 @@ struct SettingsView: View {
     
     @StateObject private var viewModel = SettingViewModel()
     @Binding var showSignInView: Bool
+    
+    let vertex = VertexAI.vertexAI()
+
+    // Initialize the generative model with a model that supports your use case
+    // Gemini 1.5 models are versatile and can be used with all API capabilities
+    
+    
     var body: some View {
         List {
             Button("Log out") {
@@ -100,9 +108,30 @@ struct SettingsView: View {
             } label: {
                 Text("Delete account")
             }
+            
+            Button("Generate") {
+                Task {
+                    do {
+                        try await generate()
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
+                
+            }
 
         }
         .navigationTitle("Settings")
+    }
+    
+    func generate() async throws {
+        let prompt = "Write a story about a magic backpack."
+        let model = vertex.generativeModel(modelName: "gemini-1.5-flash")
+        // To generate text output, call generateContent with the text input
+        let response = try await model.generateContent(prompt)
+        if let text = response.text {
+          print(text)
+        }
     }
 }
 

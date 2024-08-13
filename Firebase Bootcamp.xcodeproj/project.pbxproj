@@ -24,6 +24,7 @@
 		079600702C6A5D8E00A51862 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0796006F2C6A5D8E00A51862 /* Utilities.swift */; };
 		079600722C6A644C00A51862 /* SignInGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079600712C6A644C00A51862 /* SignInGoogleHelper.swift */; };
 		07F24C452C6AC60E0022E743 /* SignInAppleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F24C442C6AC60E0022E743 /* SignInAppleHelper.swift */; };
+		07F24C482C6AF5390022E743 /* FirebaseVertexAI-Preview in Frameworks */ = {isa = PBXBuildFile; productRef = 07F24C472C6AF5390022E743 /* FirebaseVertexAI-Preview */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07F24C482C6AF5390022E743 /* FirebaseVertexAI-Preview in Frameworks */,
 				077E05CC2C69741000B9D2D4 /* FirebaseAnalytics in Frameworks */,
 				077E05CE2C69741000B9D2D4 /* FirebaseAuth in Frameworks */,
 				079600682C6A59A900A51862 /* GoogleSignIn in Frameworks */,
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				077E05B92C69736E00B9D2D4 /* Firebase Bootcamp */,
+				07F24C462C6AF5390022E743 /* Frameworks */,
 				077E05B82C69736E00B9D2D4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -120,6 +123,13 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		07F24C462C6AF5390022E743 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,6 +151,7 @@
 				077E05CD2C69741000B9D2D4 /* FirebaseAuth */,
 				079600672C6A59A900A51862 /* GoogleSignIn */,
 				079600692C6A59A900A51862 /* GoogleSignInSwift */,
+				07F24C472C6AF5390022E743 /* FirebaseVertexAI-Preview */,
 			);
 			productName = "Firebase Bootcamp";
 			productReference = 077E05B72C69736E00B9D2D4 /* Firebase Bootcamp.app */;
@@ -458,6 +469,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 079600662C6A59A900A51862 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		07F24C472C6AF5390022E743 /* FirebaseVertexAI-Preview */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 077E05CA2C69741000B9D2D4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseVertexAI-Preview";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
