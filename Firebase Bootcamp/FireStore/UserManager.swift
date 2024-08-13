@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 import FirebaseAuth
 
-struct UserModel {
+struct UserModel: Codable {
     let userId: String
     let createdAt: Date?
     let email: String?
@@ -21,36 +21,18 @@ final class UserManager {
     static let shared = UserManager()
     private init() {}
     
-    func createNewUser(auth: AuthDataResultModel) async throws {
-        
-        var data: [String : Any] = [
-            "user_id" : auth.uid,
-            "created_at" : Timestamp()
-        ]
-        
-        if let email = auth.email {
-            data["email"] = email
-        }
-        
-        if let photoURL = auth.photoURL {
-            data["photo_url"] = photoURL
-        }
-        
-        try await Firestore.firestore().collection("users").document(auth.uid).setData(data, merge: false)
+    private let userCollection = Firestore.firestore().collection("users")
+    private func userDocument(userId: String) -> DocumentReference {
+        userCollection.document(userId)
+    }
+    
+    func createNewUser(user: UserModel) async throws {
+        try userDocument(userId: user.userId).setData(from: user, merge: false)
     }
     
     func getUser(userId: String) async throws -> UserModel {
-        let snapShot = try await Firestore.firestore().collection("users").document(userId).getDocument()
-        guard let Userdata = snapShot.data(), let userId = Userdata["user_id"] as? String else {
-            throw URLError(.badURL)
-        }
-        let createdAt = Userdata["created_at"] as? Date
-            let email = Userdata["email"] as? String
-            let photoURL = Userdata["photo_url"] as? String
-            
-        let user = UserModel(userId: userId, createdAt: createdAt, email: email, photoURL: photoURL)
-            return user
-        
+        try await userDocument(userId: userId).getDocument(as: UserModel.self)
     }
+    
     
 }
