@@ -18,6 +18,16 @@ final class ProfileViewModel: ObservableObject {
         print("this is \(String(describing: user))")
     }
     
+    @MainActor
+    func togglePremiumStatus() {
+        guard let user else { return }
+        let currenStatus = user.isPremeum ?? false
+        Task {
+            try await UserManager.shared.updateUserPremiumStatus(userId: user.userId, isPremium: !currenStatus)
+            self.user = try await UserManager.shared.getUser(userId: user.userId)
+        }
+    }
+    
 }
 struct ProfileView: View {
     @Binding var showSignInView: Bool
@@ -27,7 +37,15 @@ struct ProfileView: View {
             if let user = viewModel.user {
                 Text(user.userId)
                 Text(user.email ?? "N/A")
+                
+                
+                Button {
+                    viewModel.togglePremiumStatus()
+                } label: {
+                    Text("is Premium: \((user.isPremeum ?? false).description.capitalized)")
+                }
             }
+            
             
         }
         .onAppear {

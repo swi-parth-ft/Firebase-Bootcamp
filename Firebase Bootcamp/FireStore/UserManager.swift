@@ -14,6 +14,15 @@ struct UserModel: Codable {
     let createdAt: Date?
     let email: String?
     let photoURL: String?
+    let isPremeum: Bool?
+    
+    init(auth: AuthDataResultModel) {
+        self.userId = auth.uid
+        self.email = auth.email
+        self.photoURL = auth.photoURL
+        self.createdAt = Date()
+        self.isPremeum = false
+    }
 }
 
 final class UserManager {
@@ -34,5 +43,11 @@ final class UserManager {
         try await userDocument(userId: userId).getDocument(as: UserModel.self)
     }
     
+    func updateUserPremiumStatus(userId: String, isPremium: Bool) async throws {
+        let data: [String : Any] = [
+            "isPremeum" : isPremium
+        ]
+        try await userDocument(userId: userId).updateData(data)
+    }
     
 }
