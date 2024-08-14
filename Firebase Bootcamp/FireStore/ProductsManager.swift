@@ -24,15 +24,24 @@ final class ProductsManager {
         try productDocument(productId: String(product.id)).setData(from: product, merge: false)
     }
     
+    func getProduct(productId: String) async throws {
+        try await productDocument(productId: productId).getDocument(as: Product.self)
+    }
+    
     func getAllProducts() async throws -> [Product] {
-        let snapShot = try await productsCollection.getDocuments()
+        try await productsCollection.getDocuments(as: Product.self)
         
-        var products: [Product] = []
-        for document in snapShot.documents {
-            let product = try document.data(as: Product.self)
-            products.append(product)
-        }
+    }
+}
+
+extension Query {
+    
+    func getDocuments<T: Decodable>(as type: T.Type) async throws -> [T] {
         
-        return products
+        let snapShot = try await self.getDocuments()
+        
+        return try snapShot.documents.map({ document in
+                try document.data(as: T.self)
+        })
     }
 }
