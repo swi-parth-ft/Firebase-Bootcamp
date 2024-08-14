@@ -11,6 +11,9 @@
 		0711F3332C6BB019006C86AA /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0711F3322C6BB019006C86AA /* FirebaseStorage */; };
 		0711F33B2C6BBAC5006C86AA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711F33A2C6BBAC5006C86AA /* ProfileView.swift */; };
 		0711F33E2C6BBEDB006C86AA /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711F33D2C6BBEDB006C86AA /* UserManager.swift */; };
+		0711F3402C6CEBF2006C86AA /* ProductsDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711F33F2C6CEBF2006C86AA /* ProductsDatabase.swift */; };
+		0711F3422C6CEC37006C86AA /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711F3412C6CEC37006C86AA /* ProductsView.swift */; };
+		0711F3442C6CEDA5006C86AA /* ProductsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711F3432C6CEDA5006C86AA /* ProductsManager.swift */; };
 		077E05BB2C69736E00B9D2D4 /* Firebase_BootcampApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077E05BA2C69736E00B9D2D4 /* Firebase_BootcampApp.swift */; };
 		077E05BD2C69736E00B9D2D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077E05BC2C69736E00B9D2D4 /* ContentView.swift */; };
 		077E05BF2C69737000B9D2D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 077E05BE2C69737000B9D2D4 /* Assets.xcassets */; };
@@ -34,6 +37,9 @@
 /* Begin PBXFileReference section */
 		0711F33A2C6BBAC5006C86AA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0711F33D2C6BBEDB006C86AA /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		0711F33F2C6CEBF2006C86AA /* ProductsDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDatabase.swift; sourceTree = "<group>"; };
+		0711F3412C6CEC37006C86AA /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
+		0711F3432C6CEDA5006C86AA /* ProductsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsManager.swift; sourceTree = "<group>"; };
 		077E05B72C69736E00B9D2D4 /* Firebase Bootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Firebase Bootcamp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		077E05BA2C69736E00B9D2D4 /* Firebase_BootcampApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase_BootcampApp.swift; sourceTree = "<group>"; };
 		077E05BC2C69736E00B9D2D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				077E05CF2C69746D00B9D2D4 /* AuthenticationView.swift */,
+				0711F3412C6CEC37006C86AA /* ProductsView.swift */,
 				077E05D82C697A1100B9D2D4 /* SettingsView.swift */,
 				077E05D62C69788B00B9D2D4 /* RootView.swift */,
 				077E05D12C69746D00B9D2D4 /* SignInWithEmailView.swift */,
@@ -85,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				0711F33D2C6BBEDB006C86AA /* UserManager.swift */,
+				0711F3432C6CEDA5006C86AA /* ProductsManager.swift */,
 			);
 			path = FireStore;
 			sourceTree = "<group>";
@@ -144,6 +152,7 @@
 		0796006E2C6A5D7700A51862 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				0711F33F2C6CEBF2006C86AA /* ProductsDatabase.swift */,
 				0796006F2C6A5D8E00A51862 /* Utilities.swift */,
 			);
 			path = Utilities;
@@ -240,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0711F3422C6CEC37006C86AA /* ProductsView.swift in Sources */,
 				077E05D92C697A1100B9D2D4 /* SettingsView.swift in Sources */,
 				077E05BD2C69736E00B9D2D4 /* ContentView.swift in Sources */,
 				077E05D32C69746D00B9D2D4 /* AuthenticationManager.swift in Sources */,
@@ -247,7 +257,9 @@
 				079600722C6A644C00A51862 /* SignInGoogleHelper.swift in Sources */,
 				077E05D42C69746D00B9D2D4 /* SignInWithEmailView.swift in Sources */,
 				0711F33E2C6BBEDB006C86AA /* UserManager.swift in Sources */,
+				0711F3402C6CEBF2006C86AA /* ProductsDatabase.swift in Sources */,
 				077E05D52C69746D00B9D2D4 /* AuthenticationView.swift in Sources */,
+				0711F3442C6CEDA5006C86AA /* ProductsManager.swift in Sources */,
 				079600702C6A5D8E00A51862 /* Utilities.swift in Sources */,
 				07F24C452C6AC60E0022E743 /* SignInAppleHelper.swift in Sources */,
 				0711F33B2C6BBAC5006C86AA /* ProfileView.swift in Sources */,

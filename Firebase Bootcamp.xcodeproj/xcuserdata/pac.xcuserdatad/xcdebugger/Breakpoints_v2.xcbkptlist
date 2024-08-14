@@ -194,36 +194,22 @@
             endingLineNumber = "75"
             landmarkName = "addUserPreference(userId:preference:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4EC72DA2-7A71-4D65-8014-E6A828D72C6C - 878263ec55ab70e5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Firebase_Bootcamp.UserManager.addUserPreference(userId: Swift.String, preference: Swift.String) async throws -&gt; ()"
-                  moduleName = "Firebase Bootcamp.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pac/Desktop/Swift/Firebase%20Bootcamp/Firebase%20Bootcamp/FireStore/UserManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75">
-               </Location>
-               <Location
-                  uuid = "4EC72DA2-7A71-4D65-8014-E6A828D72C6C - 5719225f594e6ac"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Firebase_Bootcamp.UserManager.addUserPreference(userId: Swift.String, preference: Swift.String) async throws -&gt; ()"
-                  moduleName = "Firebase Bootcamp.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pac/Desktop/Swift/Firebase%20Bootcamp/Firebase%20Bootcamp/FireStore/UserManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "38B26763-45D3-4289-A21C-078A5346DEDF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Firebase Bootcamp/FireStore/ProductsManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "uploadProduct(product:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
