@@ -24,7 +24,9 @@ final class ProductsManager {
         try productDocument(productId: String(product.id)).setData(from: product, merge: false)
     }
  
-    
+    func getProduct(productId: String) async throws -> Product {
+        try await productDocument(productId: productId).getDocument(as: Product.self)
+    }
 
     
     func getAllProductsQuery()  -> Query {
@@ -69,6 +71,11 @@ final class ProductsManager {
             .startOptionally(afterDocument: lastDocument)
             .getDocumentsWithSnapshot(as: Product.self)
     }
+    
+    func getAllProductsCount() async throws -> Int {
+        try await productsCollection
+            .aggregateCount()
+    }
 }
 
 extension Query {
@@ -90,5 +97,10 @@ extension Query {
     func startOptionally(afterDocument lastDocument: DocumentSnapshot?) -> Query {
         guard let lastDocument else { return self }
         return self.start(afterDocument: lastDocument)
+    }
+    
+    func aggregateCount() async throws -> Int {
+        let snapshot = try await self.count.getAggregation(source: .server)
+        return Int(truncating: snapshot.count)
     }
 }

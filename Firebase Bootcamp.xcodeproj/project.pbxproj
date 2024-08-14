@@ -14,6 +14,10 @@
 		0711F3402C6CEBF2006C86AA /* ProductsDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711F33F2C6CEBF2006C86AA /* ProductsDatabase.swift */; };
 		0711F3422C6CEC37006C86AA /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711F3412C6CEC37006C86AA /* ProductsView.swift */; };
 		0711F3442C6CEDA5006C86AA /* ProductsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711F3432C6CEDA5006C86AA /* ProductsManager.swift */; };
+		0711F3462C6D268D006C86AA /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711F3452C6D268D006C86AA /* TabbarView.swift */; };
+		0711F3482C6D26D8006C86AA /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711F3472C6D26D8006C86AA /* FavoriteView.swift */; };
+		0711F34C2C6D284A006C86AA /* ProductCellViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711F34A2C6D284A006C86AA /* ProductCellViewBuilder.swift */; };
+		0711F34D2C6D284A006C86AA /* ProductCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711F3492C6D284A006C86AA /* ProductCellView.swift */; };
 		077E05BB2C69736E00B9D2D4 /* Firebase_BootcampApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077E05BA2C69736E00B9D2D4 /* Firebase_BootcampApp.swift */; };
 		077E05BD2C69736E00B9D2D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077E05BC2C69736E00B9D2D4 /* ContentView.swift */; };
 		077E05BF2C69737000B9D2D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 077E05BE2C69737000B9D2D4 /* Assets.xcassets */; };
@@ -40,6 +44,10 @@
 		0711F33F2C6CEBF2006C86AA /* ProductsDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDatabase.swift; sourceTree = "<group>"; };
 		0711F3412C6CEC37006C86AA /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
 		0711F3432C6CEDA5006C86AA /* ProductsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsManager.swift; sourceTree = "<group>"; };
+		0711F3452C6D268D006C86AA /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
+		0711F3472C6D26D8006C86AA /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		0711F3492C6D284A006C86AA /* ProductCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellView.swift; sourceTree = "<group>"; };
+		0711F34A2C6D284A006C86AA /* ProductCellViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellViewBuilder.swift; sourceTree = "<group>"; };
 		077E05B72C69736E00B9D2D4 /* Firebase Bootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Firebase Bootcamp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		077E05BA2C69736E00B9D2D4 /* Firebase_BootcampApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase_BootcampApp.swift; sourceTree = "<group>"; };
 		077E05BC2C69736E00B9D2D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +86,8 @@
 		0711F3342C6BB0B0006C86AA /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				0711F34B2C6D284A006C86AA /* Subviews */,
+				0711F3472C6D26D8006C86AA /* FavoriteView.swift */,
 				077E05CF2C69746D00B9D2D4 /* AuthenticationView.swift */,
 				0711F3412C6CEC37006C86AA /* ProductsView.swift */,
 				077E05D82C697A1100B9D2D4 /* SettingsView.swift */,
@@ -95,6 +105,15 @@
 				0711F3432C6CEDA5006C86AA /* ProductsManager.swift */,
 			);
 			path = FireStore;
+			sourceTree = "<group>";
+		};
+		0711F34B2C6D284A006C86AA /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				0711F3492C6D284A006C86AA /* ProductCellView.swift */,
+				0711F34A2C6D284A006C86AA /* ProductCellViewBuilder.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		077E05AE2C69736E00B9D2D4 = {
@@ -117,6 +136,7 @@
 		077E05B92C69736E00B9D2D4 /* Firebase Bootcamp */ = {
 			isa = PBXGroup;
 			children = (
+				0711F3452C6D268D006C86AA /* TabbarView.swift */,
 				0796006D2C6A5B2700A51862 /* Firebase-Bootcamp-Info.plist */,
 				077E05BA2C69736E00B9D2D4 /* Firebase_BootcampApp.swift */,
 				0711F33C2C6BBEC4006C86AA /* FireStore */,
@@ -250,7 +270,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0711F3422C6CEC37006C86AA /* ProductsView.swift in Sources */,
+				0711F3482C6D26D8006C86AA /* FavoriteView.swift in Sources */,
 				077E05D92C697A1100B9D2D4 /* SettingsView.swift in Sources */,
+				0711F3462C6D268D006C86AA /* TabbarView.swift in Sources */,
 				077E05BD2C69736E00B9D2D4 /* ContentView.swift in Sources */,
 				077E05D32C69746D00B9D2D4 /* AuthenticationManager.swift in Sources */,
 				077E05D72C69788B00B9D2D4 /* RootView.swift in Sources */,
@@ -261,6 +283,8 @@
 				077E05D52C69746D00B9D2D4 /* AuthenticationView.swift in Sources */,
 				0711F3442C6CEDA5006C86AA /* ProductsManager.swift in Sources */,
 				079600702C6A5D8E00A51862 /* Utilities.swift in Sources */,
+				0711F34C2C6D284A006C86AA /* ProductCellViewBuilder.swift in Sources */,
+				0711F34D2C6D284A006C86AA /* ProductCellView.swift in Sources */,
 				07F24C452C6AC60E0022E743 /* SignInAppleHelper.swift in Sources */,
 				0711F33B2C6BBAC5006C86AA /* ProfileView.swift in Sources */,
 				077E05BB2C69736E00B9D2D4 /* Firebase_BootcampApp.swift in Sources */,

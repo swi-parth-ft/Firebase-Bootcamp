@@ -31,7 +31,8 @@ final class ProductsViewModel: ObservableObject {
     
     func filterSelected(option: FilterOption) async throws {
         self.selectedFilter = option
-        
+        self.products = []
+        self.lastDocument = nil
         self.getProducts()
     }
     
@@ -51,6 +52,8 @@ final class ProductsViewModel: ObservableObject {
     
     func categorySelected(option: CategoryOption) async throws {
         self.selectedCategory = option
+        self.products = []
+        self.lastDocument = nil
         self.getProducts()
     }
     
@@ -64,6 +67,13 @@ final class ProductsViewModel: ObservableObject {
             }
         }
     }
+    
+    func addUserFavoriteProduct(productId: Int) {
+        Task {
+            let authDataResult = try AuthenticationManager.shared.getAuthenticatedUser()
+            try? await UserManager.shared.addUserFavoriteProduct(userId: authDataResult.uid, productId: productId)
+        }
+    }
 
 }
 
@@ -73,10 +83,14 @@ struct ProductsView: View {
     
     var body: some View {
         List {
-            
             ForEach(viewModel.products) { product in
-                Text(product.title ?? "n/a")
-                    
+                ProductCellView(product: product)
+                    .contextMenu {
+                        Button("Add to favorites") {
+                            viewModel.addUserFavoriteProduct(productId: product.id)
+                        }
+                    }
+                
                 if product == viewModel.products.last {
                     ProgressView()
                         .onAppear {
@@ -119,5 +133,7 @@ struct ProductsView: View {
 }
 
 #Preview {
-    ProductsView()
+    NavigationStack {
+        ProductsView()
+    }
 }
