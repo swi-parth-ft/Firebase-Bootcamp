@@ -30,8 +30,8 @@
             filePath = "Firebase Bootcamp/Core/ProfileView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -209,6 +209,22 @@
             startingLineNumber = "24"
             endingLineNumber = "24"
             landmarkName = "uploadProduct(product:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0983FCDC-04B0-4B39-8C85-A19BD1AAFF30"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Firebase Bootcamp/FireStore/ProductsManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "getAllProducts(priceDescending:forCategory:count:lastDocument:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

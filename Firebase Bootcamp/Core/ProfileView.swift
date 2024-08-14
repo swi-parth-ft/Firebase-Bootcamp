@@ -122,6 +122,11 @@ struct ProfileView: View {
                 } label: {
                     Text("Favorite Movie: \((user.favMovie?.title ?? ""))")
                 }
+                
+                NavigationLink(destination: ProductsView()) {
+                    Text("Products")
+                    
+                }
             }
             
             
